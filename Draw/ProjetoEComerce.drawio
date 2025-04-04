@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0" version="26.2.4">
+  <diagram name="Modelo Relacional" id="8IB0-4g3I4PK7VrPEKMA">
+    <mxGraphModel dx="1219" dy="671" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Vr-7RFfWfGufyXCvX90B-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=0;" edge="1" parent="1" source="Vr-7RFfWfGufyXCvX90B-1" target="Vr-7RFfWfGufyXCvX90B-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vr-7RFfWfGufyXCvX90B-1" value="Clientes" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="60" y="120" width="125" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vr-7RFfWfGufyXCvX90B-2" value="Produtos" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="680" y="120" width="125" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vr-7RFfWfGufyXCvX90B-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=0;" edge="1" parent="1" source="Vr-7RFfWfGufyXCvX90B-3" target="Vr-7RFfWfGufyXCvX90B-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vr-7RFfWfGufyXCvX90B-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=0;" edge="1" parent="1" source="Vr-7RFfWfGufyXCvX90B-3" target="Vr-7RFfWfGufyXCvX90B-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vr-7RFfWfGufyXCvX90B-3" value="Pedidos" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="380" y="120" width="125" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vr-7RFfWfGufyXCvX90B-4" value="Pagamentos" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="380" y="340" width="125" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vr-7RFfWfGufyXCvX90B-7" value="Relationship" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="250" y="125" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Vr-7RFfWfGufyXCvX90B-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=0;" edge="1" parent="1" source="Vr-7RFfWfGufyXCvX90B-9" target="Vr-7RFfWfGufyXCvX90B-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vr-7RFfWfGufyXCvX90B-9" value="Relationship" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="402.5" y="230" width="80" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
