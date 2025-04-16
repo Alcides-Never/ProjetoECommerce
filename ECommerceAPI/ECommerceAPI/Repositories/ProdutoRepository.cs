@@ -1,6 +1,7 @@
 ﻿using ECommerceAPI.Context;
 using ECommerceAPI.Interfaces;
 using ECommerceAPI.Models;
+using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
 
 namespace ECommerceAPI.Repositories
 {
@@ -22,12 +23,36 @@ namespace ECommerceAPI.Repositories
 
         public void Atualizar(int id, Produto produto)
         {
-            throw new NotImplementedException();
+            // Encontro o produto que desejo
+            Produto produtoEncontrado = _context.Produtos.Find(id);
+
+            // Caso não encontre o produto, lanço um erro
+            if (produtoEncontrado == null)
+            {
+                throw new Exception();
+            }
+
+            produtoEncontrado.NomeProduto = produto.NomeProduto;
+            produtoEncontrado.Descricao = produto.Descricao;
+            produtoEncontrado.Preco = produto.Preco;
+            produtoEncontrado.Categoria = produto.Categoria;
+            produtoEncontrado.Imagem = produto.Imagem;
+            produtoEncontrado.EstoqueDisponivel = produto.EstoqueDisponivel;
+
+            _context.SaveChanges();
         }
 
         public Produto BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            // ToList() - Pegar Varios
+            // FirstorDefault - Tra o primeiro que encontrar ou NULL
+
+            // Expressão Lambda, considerado como função sem corpo.
+            // _context.Produtos - Acesse a tabela Produtos do Contexto
+            // FirstorDefault - Pegue o primeiro que encontrar 
+            // p => p.IdProduto == id
+            // Para cada prodto P, me retorne aquele que tem o IdProduto igual ao id.
+            return _context.Produtos.FirstOrDefault(p => p.IdProduto == id);
         }
 
         public void Cadastrar(Produto produto)
@@ -39,7 +64,20 @@ namespace ECommerceAPI.Repositories
 
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            // 1 - Encontrar o que eu quero Excluir
+            // Find - Procura pela chave primaria
+            Produto produtoEncontrado = _context.Produtos.Find(id);
+
+            // Caso não encontre o produto, lanço um erro
+            if(produtoEncontrado == null)
+            {
+                throw new Exception();
+            }
+            // Caso eu encontre o produto, removo ele
+            _context.Produtos.Remove(produtoEncontrado);
+
+            // Salvo as alterações
+            _context.SaveChanges();
         }
 
         public List<Produto> ListarTodos()
