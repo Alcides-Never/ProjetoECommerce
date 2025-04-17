@@ -29,7 +29,48 @@ namespace ECommerceAPI.Controllers
         [HttpPost]
         public IActionResult CadastrarCliente(Cliente cliente)
         {
+            _clienteRepository.Cadastrar(cliente);
+            return Created();
+        }
 
+        [HttpGet("{id}")]
+        public IActionResult ListarPorId(int id)
+        {
+            Cliente cliente = _clienteRepository.BuscarPorId(id);
+
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+            return Ok(cliente);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult AtualizarCliente(int id, Cliente cliente)
+        {
+            try
+            {
+                _clienteRepository.Atualizar(id, cliente);
+                return Ok(cliente);
+            }
+            catch (Exception e)
+            {
+                return NotFound(e);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult Deletar(int id)
+        {
+            try
+            {
+                _clienteRepository.Deletar(id);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                return NotFound("Produto não encontrado!");
+            }
         }
     }
 }
