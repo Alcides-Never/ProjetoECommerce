@@ -1,5 +1,6 @@
 ﻿using ECommerceAPI.Context;
 using ECommerceAPI.Interfaces;
+using ECommerceAPI.Models;
 using ECommerceAPI.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,19 +11,25 @@ namespace ECommerceAPI.Controllers
     [ApiController]
     public class ClienteController : ControllerBase
     {
-        private readonly EcommerceContext _context;
+        
         private IClienteRepository _clienteRepository;
 
-        //public ClienteController(EcommerceContext context, IClienteRepository clienteRepository)
-        public ClienteController(EcommerceContext context)
+        
+        public ClienteController(IClienteRepository clienteRepository)
         {
-            _context = context;
-            _clienteRepository = new ClienteRepository(_context);
+            _clienteRepository = clienteRepository;
         }
+
         [HttpGet]
         public IActionResult ListarTodos()
         {
             return Ok(_clienteRepository.ListarTodos());
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarCliente(Cliente cliente)
+        {
+
         }
     }
 }
