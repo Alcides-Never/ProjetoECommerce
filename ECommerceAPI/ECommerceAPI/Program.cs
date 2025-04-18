@@ -12,11 +12,12 @@ builder.Services.AddSwaggerGen();
 // AddTransient -> O C# criar uma instância nova, toda vez que um método é chamado.- Bastante utilizado
 // AddScoped -> O C# cria uma instância nova, toda vez que criar um Controller. - Pouco usado devido ao risco de conflito. De modo geral cria um repositoria para ser usado diversas vezes, diferente do AddTransient
 // AddSingleton
-builder.Services.AddScoped<EcommerceContext, EcommerceContext>();
-
+builder.Services.AddDbContext<EcommerceContext, EcommerceContext>();
 builder.Services.AddTransient<IProdutoRepository, ProdutoRepository>();
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
 builder.Services.AddTransient<IPagamentoRepository, PagamentoRepository>();
+
+
 
 var app = builder.Build();
 

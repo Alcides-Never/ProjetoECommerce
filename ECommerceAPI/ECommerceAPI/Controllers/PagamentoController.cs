@@ -1,5 +1,6 @@
 ﻿using ECommerceAPI.Context;
 using ECommerceAPI.Interfaces;
+using ECommerceAPI.Models;
 using ECommerceAPI.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,21 +11,67 @@ namespace ECommerceAPI.Controllers
     [ApiController]
     public class PagamentoController : ControllerBase
     {
-        private readonly EcommerceContext _context;
         private IPagamentoRepository _pagamentoRepository;
 
-        //public PagamentoController(EcommerceContext context, IPagamentoRepository pagamentoRepository)
-            public PagamentoController(EcommerceContext context)
+            public PagamentoController(IPagamentoRepository pagamentoRepository)
         {
-            _context = context;
-            _pagamentoRepository =  new PagamentoRepository(_context);
+            _pagamentoRepository = pagamentoRepository;
         }
 
-        // 1 - Definir o VERBO
+
+        
         [HttpGet]
         public IActionResult ListarTodos()
         {
             return Ok(_pagamentoRepository.ListarTodos());
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarPagamento(Pagamento pagamento)
+        {
+            _pagamentoRepository.Cadastrar(pagamento);
+            return Created();
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult ListarPorID(int id)
+        {
+            Pagamento pagamento = _pagamentoRepository.BuscarPorId(id);
+
+            if (pagamento == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(pagamento);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult AtualizarPagamento(int id, Pagamento pagamento)
+        {
+            try
+            {
+                _pagamentoRepository.Atualizar(id, pagamento);
+                return Ok(pagamento);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+            try
+            {
+                _pagamentoRepository.Deletar(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return NotFound("Pagamento não enontrado");
+            }
         }
     }
 }

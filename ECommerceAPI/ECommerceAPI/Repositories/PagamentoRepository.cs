@@ -41,7 +41,17 @@ namespace ECommerceAPI.Repositories
 
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            Pagamento pagamentoEncontrado = _context.Pagamentos.Find(id);
+
+            if (pagamentoEncontrado == null)
+            {
+                throw new Exception();
+            }
+
+            _context.Pagamentos.Remove(pagamentoEncontrado);
+
+            _context.SaveChanges();
+
         }
 
         public List<Pagamento> ListarTodos()

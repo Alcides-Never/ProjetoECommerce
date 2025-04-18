@@ -31,44 +31,45 @@ CREATE TABLE Cliente (
 -- PRIMARY KEY - Coluna que identifica os clientes.
 -- IDENTITY - Gerada automaticamente
 	IdCliente INT PRIMARY KEY IDENTITY,
-	NomeCompleto VARCHAR(150),
-	Email VARCHAR(100),
-	Telefone VARCHAR(20),
+	NomeCompleto VARCHAR(150) NOT NULL,
+	Email VARCHAR(100)NOT NULL UNIQUE,
+	Telefone VARCHAR(20) ,
 	Endereco VARCHAR(255),
+	Senha VARCHAR(255) NOT NULL,
 	DataCadastro DATE
 );
 
 CREATE TABLE Pedido (
 	IdPedido INT PRIMARY KEY IDENTITY,
-	DataPedido DATE,
-	Status VARCHAR(20),
+	DataPedido DATE NOT NULL,
+	Status VARCHAR(20) NOT NULL,
 	ValorTotal DECIMAL(18, 6),
-	IdCliente INT FOREIGN KEY REFERENCES Cliente(IdCliente)
+	IdCliente INT FOREIGN KEY REFERENCES Cliente(IdCliente) NOT NULL
 );
 
 CREATE TABLE Pagamento (
 	IdPagamento INT PRIMARY KEY IDENTITY,
-	FormaPagamento VARCHAR(30),
-	Status VARCHAR(20),
-	Data DATETIME,
-	IdPedido INT FOREIGN KEY REFERENCES Pedido(IdPedido)
+	FormaPagamento VARCHAR(30) NOT NULL,
+	Status VARCHAR(20) NOT NULL,
+	Data DATETIME NOT NULL,
+	IdPedido INT FOREIGN KEY REFERENCES Pedido(IdPedido) NOT NULL
 );
 
 CREATE TABLE Produto (
 	IdProduto INT PRIMARY KEY IDENTITY,
-	NomeProduto VARCHAR(150),
+	NomeProduto VARCHAR(150) NOT NULL,
 	Descricao VARCHAR(255),
-	Preco DECIMAL(18, 6),
-	EstoqueDisponivel INT,
-	Categoria VARCHAR(100),
+	Preco DECIMAL(18, 6) NOT NULL,
+	EstoqueDisponivel INT NOT NULL,
+	Categoria VARCHAR(100) NOT NULL,
 	Imagem VARCHAR(255)
 );
 
 CREATE TABLE ItensPedido (
 	IdItem INT PRIMARY KEY IDENTITY,
-	Quantidade INT,
-	IdPedido INT FOREIGN KEY REFERENCES Pedido(IdPedido),
-	IdProduto INT FOREIGN KEY REFERENCES Produto(IdProduto)
+	Quantidade INT NOT NULL,
+	IdPedido INT FOREIGN KEY REFERENCES Pedido(IdPedido) NOT NULL,
+	IdProduto INT FOREIGN KEY REFERENCES Produto(IdProduto) NOT NULL
 );
 
 DROP TABLE ItensPedido;
@@ -76,3 +77,5 @@ DROP TABLE Pagamento;
 DROP TABLE Pedido;
 DROP TABLE Produto;
 DROP TABLE Cliente;
+
+select * from Cliente;
