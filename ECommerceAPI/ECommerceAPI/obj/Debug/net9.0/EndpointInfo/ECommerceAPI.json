@@ -130,6 +130,36 @@
         }
       }
     },
+    "/api/Cliente/{email}/{senha}": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "senha",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Pagamento": {
       "get": {
         "tags": [
@@ -513,13 +543,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ItensPedido"
-            },
-            "nullable": true
-          },
-          "pagamentos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Pagamento"
             },
             "nullable": true
           }

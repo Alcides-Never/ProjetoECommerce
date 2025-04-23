@@ -1,6 +1,7 @@
 ﻿using ECommerceAPI.Context;
 using ECommerceAPI.Interfaces;
 using ECommerceAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceAPI.Repositories
 {
@@ -56,7 +57,7 @@ namespace ECommerceAPI.Repositories
 
         public List<Pagamento> ListarTodos()
         {
-            return _context.Pagamentos.ToList();
+            return _context.Pagamentos.Include(p => p.IdPedidoNavigation).ToList();
         }
     }
 }

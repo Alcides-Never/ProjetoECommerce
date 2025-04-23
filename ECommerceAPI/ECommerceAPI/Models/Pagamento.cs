@@ -15,5 +15,6 @@ public partial class Pagamento
 
     public int IdPedido { get; set; }
 
-    public virtual Pedido IdPedidoNavigation { get; set; } = null!;
+    // O EF por padrao, ele entende<nome da tabela>Id. É preciso seguir o padrão, ID<nome da tabela>
+    public virtual Pedido? IdPedidoNavigation { get; set; } = null!;
 }

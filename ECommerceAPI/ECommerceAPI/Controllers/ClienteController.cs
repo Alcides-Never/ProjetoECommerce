@@ -72,5 +72,21 @@ namespace ECommerceAPI.Controllers
                 return NotFound("Produto não encontrado!");
             }
         }
+
+        // /api/cliente/vini@senai.br/senha123
+        [HttpGet("{email}/{senha}")]
+
+        public IActionResult Login(string email, string senha)
+        {
+            var cliente = _clienteRepository.BuscarPorEmailSenha(email, senha);
+
+            if(cliente == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(cliente);
+        }
+
     }
 }
