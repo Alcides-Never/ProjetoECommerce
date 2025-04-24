@@ -1,4 +1,5 @@
 ﻿using ECommerceAPI.Context;
+using ECommerceAPI.DTO;
 using ECommerceAPI.Interfaces;
 using ECommerceAPI.Models;
 using ECommerceAPI.Repositories;
@@ -27,7 +28,7 @@ namespace ECommerceAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult CadastrarCliente(Cliente cliente)
+        public IActionResult CadastrarCliente(CadastrarClienteDTO cliente)
         {
             _clienteRepository.Cadastrar(cliente);
             return Created();
@@ -72,6 +73,19 @@ namespace ECommerceAPI.Controllers
                 return NotFound("Produto não encontrado!");
             }
         }
+
+        [HttpGet("/buscar/{nome}")]
+        public IActionResult BuscarPorNome(string nome)
+        {
+            return Ok(_clienteRepository.BuscarClientePorNome(nome));
+        }
+
+        //[HttpGet("{id}")]
+        //public IActionResult BuscarPorId(int id)
+        //{
+        //    return Ok(_clienteRepository.BuscarPorId(id));
+        //}
+
 
         // /api/cliente/vini@senai.br/senha123
         [HttpGet("{email}/{senha}")]

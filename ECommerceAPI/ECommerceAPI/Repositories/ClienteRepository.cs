@@ -1,4 +1,5 @@
 ﻿using ECommerceAPI.Context;
+using ECommerceAPI.DTO;
 using ECommerceAPI.Interfaces;
 using ECommerceAPI.Models;
 
@@ -37,8 +38,16 @@ namespace ECommerceAPI.Repositories
             clienteEncontrado.DataCadastro = cliente.DataCadastro;
 
             _context.SaveChanges();
-        }   
+        }
 
+        public List<Cliente> BuscarClientePorNome(string nome)
+        {
+
+            // Where - Traz todos que atendem uma condição
+            var listaClientes = _context.Clientes.Where(c => c.NomeCompleto == nome).ToList();
+
+            return listaClientes;
+        }
 
         public Cliente? BuscarPorEmailSenha(string email, string senha)
         {
@@ -54,12 +63,24 @@ namespace ECommerceAPI.Repositories
             return _context.Clientes.FirstOrDefault(c => c.IdCliente == id);
         }
 
-        public void Cadastrar(Cliente cliente)
+        public void Cadastrar(CadastrarClienteDTO cliente)
         {
-            _context.Clientes.Add(cliente);
+
+            Cliente clienteCadastrado = new Cliente
+            {
+                NomeCompleto = cliente.NomeCompleto,
+                Email = cliente.Email,
+                Telefone = cliente.Telefone,
+                Endereco = cliente.Endereco,
+                Senha = cliente.Senha,
+                DataCadastro = cliente.DataCadastro,
+            };
+
+            _context.Clientes.Add(clienteCadastrado);
 
             _context.SaveChanges();
         }
+
 
         public void Deletar(int id)
         {
@@ -83,7 +104,9 @@ namespace ECommerceAPI.Repositories
 
         public List<Cliente> ListarTodos()
         {
-            return _context.Clientes.ToList();
+            return _context.Clientes
+                .OrderBy(c => c.NomeCompleto)
+                .ToList();
         }
     }
 }
