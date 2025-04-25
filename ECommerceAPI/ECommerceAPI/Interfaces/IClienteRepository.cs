@@ -1,12 +1,13 @@
 ﻿using System.Globalization;
 using ECommerceAPI.DTO;
 using ECommerceAPI.Models;
+using ECommerceAPI.ViewModels;
 
 namespace ECommerceAPI.Interfaces
 {
     public interface IClienteRepository
     {
-        List<Cliente> ListarTodos();
+        List<ListarClienteViewModel> ListarTodos();
 
         // Read
         Cliente BuscarPorId(int id);

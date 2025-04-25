@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\FIC\\Documents\\Workstation\\ECommerce\\ECommerceAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B04A613E-3BE4-4173-8A77-CE36AEFCEEE8}|ECommerceAPI\\ECommerceAPI.csproj|c:\\users\\fic\\documents\\workstation\\ecommerce\\ecommerceapi\\ecommerceapi\\controllers\\pagamentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B04A613E-3BE4-4173-8A77-CE36AEFCEEE8}|ECommerceAPI\\ECommerceAPI.csproj|solutionrelative:ecommerceapi\\controllers\\pagamentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B04A613E-3BE4-4173-8A77-CE36AEFCEEE8}|ECommerceAPI\\ECommerceAPI.csproj|c:\\users\\fic\\documents\\workstation\\ecommerce\\ecommerceapi\\ecommerceapi\\interfaces\\ipagamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B04A613E-3BE4-4173-8A77-CE36AEFCEEE8}|ECommerceAPI\\ECommerceAPI.csproj|solutionrelative:ecommerceapi\\interfaces\\ipagamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B04A613E-3BE4-4173-8A77-CE36AEFCEEE8}|ECommerceAPI\\ECommerceAPI.csproj|c:\\users\\fic\\documents\\workstation\\ecommerce\\ecommerceapi\\ecommerceapi\\repositories\\pagamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B04A613E-3BE4-4173-8A77-CE36AEFCEEE8}|ECommerceAPI\\ECommerceAPI.csproj|solutionrelative:ecommerceapi\\repositories\\pagamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B04A613E-3BE4-4173-8A77-CE36AEFCEEE8}|ECommerceAPI\\ECommerceAPI.csproj|c:\\users\\fic\\documents\\workstation\\ecommerce\\ecommerceapi\\ecommerceapi\\dto\\cadastrarpagamentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B04A613E-3BE4-4173-8A77-CE36AEFCEEE8}|ECommerceAPI\\ECommerceAPI.csproj|solutionrelative:ecommerceapi\\dto\\cadastrarpagamentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B04A613E-3BE4-4173-8A77-CE36AEFCEEE8}|ECommerceAPI\\ECommerceAPI.csproj|c:\\users\\fic\\documents\\workstation\\ecommerce\\ecommerceapi\\ecommerceapi\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B04A613E-3BE4-4173-8A77-CE36AEFCEEE8}|ECommerceAPI\\ECommerceAPI.csproj|solutionrelative:ecommerceapi\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PagamentoController.cs",
-              "DocumentMoniker": "C:\\Users\\FIC\\Documents\\Workstation\\ECommerce\\ECommerceAPI\\ECommerceAPI\\Controllers\\PagamentoController.cs",
-              "RelativeDocumentMoniker": "ECommerceAPI\\Controllers\\PagamentoController.cs",
-              "ToolTip": "C:\\Users\\FIC\\Documents\\Workstation\\ECommerce\\ECommerceAPI\\ECommerceAPI\\Controllers\\PagamentoController.cs",
-              "RelativeToolTip": "ECommerceAPI\\Controllers\\PagamentoController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwBoAAAA6AAAAAAAAAA==",
+              "Title": "IProdutoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\FIC\\Documents\\Workstation\\ECommerce\\ECommerceAPI\\ECommerceAPI\\Interfaces\\IProdutoRepository.cs",
+              "RelativeDocumentMoniker": "ECommerceAPI\\Interfaces\\IProdutoRepository.cs",
+              "ToolTip": "C:\\Users\\FIC\\Documents\\Workstation\\ECommerce\\ECommerceAPI\\ECommerceAPI\\Interfaces\\IProdutoRepository.cs",
+              "RelativeToolTip": "ECommerceAPI\\Interfaces\\IProdutoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T00:54:13.678Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IPagamentoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\FIC\\Documents\\Workstation\\ECommerce\\ECommerceAPI\\ECommerceAPI\\Interfaces\\IPagamentoRepository.cs",
-              "RelativeDocumentMoniker": "ECommerceAPI\\Interfaces\\IPagamentoRepository.cs",
-              "ToolTip": "C:\\Users\\FIC\\Documents\\Workstation\\ECommerce\\ECommerceAPI\\ECommerceAPI\\Interfaces\\IPagamentoRepository.cs",
-              "RelativeToolTip": "ECommerceAPI\\Interfaces\\IPagamentoRepository.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T00:53:02.117Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PagamentoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\FIC\\Documents\\Workstation\\ECommerce\\ECommerceAPI\\ECommerceAPI\\Repositories\\PagamentoRepository.cs",
-              "RelativeDocumentMoniker": "ECommerceAPI\\Repositories\\PagamentoRepository.cs",
-              "ToolTip": "C:\\Users\\FIC\\Documents\\Workstation\\ECommerce\\ECommerceAPI\\ECommerceAPI\\Repositories\\PagamentoRepository.cs",
-              "RelativeToolTip": "ECommerceAPI\\Repositories\\PagamentoRepository.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAA5wDEAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T00:50:53.057Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CadastrarPagamentoDTO.cs",
-              "DocumentMoniker": "C:\\Users\\FIC\\Documents\\Workstation\\ECommerce\\ECommerceAPI\\ECommerceAPI\\DTO\\CadastrarPagamentoDTO.cs",
-              "RelativeDocumentMoniker": "ECommerceAPI\\DTO\\CadastrarPagamentoDTO.cs",
-              "ToolTip": "C:\\Users\\FIC\\Documents\\Workstation\\ECommerce\\ECommerceAPI\\ECommerceAPI\\DTO\\CadastrarPagamentoDTO.cs",
-              "RelativeToolTip": "ECommerceAPI\\DTO\\CadastrarPagamentoDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T00:45:33.595Z",
+              "WhenOpened": "2025-04-25T00:39:44.54Z",
               "EditorCaption": ""
             }
           ]
