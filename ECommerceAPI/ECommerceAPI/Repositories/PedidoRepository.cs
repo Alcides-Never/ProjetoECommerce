@@ -3,6 +3,7 @@ using ECommerceAPI.Context;
 using ECommerceAPI.DTO;
 using ECommerceAPI.Interfaces;
 using ECommerceAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceAPI.Repositories
 {
@@ -18,12 +19,22 @@ namespace ECommerceAPI.Repositories
         // trecho final
         public void Atualizar(int id, Pedido pedido)
         {
-            throw new NotImplementedException();
+            Pedido pedidoEncontrado = _context.Pedidos.Find();
+            
+            if (pedidoEncontrado == null )
+            {
+                throw new Exception();
+            }
+
+            pedidoEncontrado.DataPedido = pedido.DataPedido;
+            pedidoEncontrado.Status = pedido.Status;
+            //pedidoEncontrado.
+
         }
 
         public Pedido BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            return _context.Pedidos.FirstOrDefault(p => p.IdPedido == id);
         }
 
         public void Cadastrar(CadastrarPedidoDTO pedidoDto)
@@ -69,12 +80,24 @@ namespace ECommerceAPI.Repositories
 
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            Pedido pedidoEncontrado = _context.Pedidos.Find(id);
+
+            if(pedidoEncontrado == null)
+            {
+                throw new Exception();
+            }
+
+            _context.Pedidos.Remove(pedidoEncontrado);
+
+            _context.SaveChanges();
         }
 
         public List<Pedido> ListarTodos()
         {
-            throw new NotImplementedException();
+            return _context.Pedidos
+                .Include(p => p.ItensPedidos)
+                .ThenInclude(p => p.IdProdutoNavigation)
+                .ToList();
         }
     }
 }

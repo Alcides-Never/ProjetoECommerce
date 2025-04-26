@@ -579,9 +579,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "idPedidoNavigation": {
-            "$ref": "#/components/schemas/Pedido"
-          },
           "idProdutoNavigation": {
             "$ref": "#/components/schemas/Produto"
           }
@@ -683,13 +680,6 @@
           },
           "imagem": {
             "type": "string",
-            "nullable": true
-          },
-          "itensPedidos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ItensPedido"
-            },
             "nullable": true
           }
         },
