@@ -3,6 +3,7 @@ using ECommerceAPI.DTO;
 using ECommerceAPI.Interfaces;
 using ECommerceAPI.Models;
 using ECommerceAPI.Repositories;
+using ECommerceAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,9 @@ namespace ECommerceAPI.Controllers
     {
         
         private IClienteRepository _clienteRepository;
+
+        // Instanciar o PasswordService
+        private PasswordService passwordService = new PasswordService();
 
         
         public ClienteController(IClienteRepository clienteRepository)
@@ -30,7 +34,10 @@ namespace ECommerceAPI.Controllers
         [HttpPost]
         public IActionResult CadastrarCliente(CadastrarClienteDTO cliente)
         {
+            //cliente.Senha = passwordService.HashPassword(cliente);
+
             _clienteRepository.Cadastrar(cliente);
+
             return Created();
         }
 

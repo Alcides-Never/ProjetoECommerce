@@ -21,12 +21,12 @@ namespace ECommerceAPI.Controllers
             return Ok(_itemPedidoRepository.ListarTodos());
         }
 
-        [HttpPost]
-        public IActionResult CadastrarItemPedido(ItemPedido item)
-        {
-            _itemPedidoRepository.Cadastrar(item);
+        //[HttpPost]
+        //public IActionResult CadastrarItemPedido(ItemPedido item)
+        //{
+        //    _itemPedidoRepository.Cadastrar(item);
 
-            return Created();
-        }
+        //    return Created();
+        //}
     }
 }
