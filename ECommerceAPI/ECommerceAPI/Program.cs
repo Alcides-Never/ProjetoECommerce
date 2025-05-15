@@ -37,7 +37,25 @@ builder.Services.AddAuthentication("Bearer")
 
 builder.Services.AddAuthentication();
 
+builder.Services.AddCors(
+    options =>
+    {
+        options.AddPolicy(
+            name: "minhasOrigens",
+            policy =>
+            {
+                //TODO: Alterar o link para o Frontend
+                policy.WithOrigins("http://localhost:5500");
+                policy.AllowAnyHeader();
+                policy.AllowAnyMethod();
+            }
+        );
+    });
+
 var app = builder.Build();
+
+//Aplicação do Cors, a linha Cors precisa estar sempre acima do método mapControllers. Se colocar depois ele não irá funcionar pois a aplicação irá criar o controller antes de aplicar as políticas.
+app.UseCors("minhasOrigens");
 
 app.UseSwagger();
 
